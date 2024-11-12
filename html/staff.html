@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الهيئة الدراسية - مدرسة إمام بركات</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="logo"><a href="index.html"><img src="banar barkat scool.jpg" alt="شعار المدرسة"> </a></li>
+            <li><a href="index.html">الصفحة الرئيسية</a></li>
+            <li><a href="schedule.html">الجداول المدرسية</a></li>
+            <li><a href="staff.html">الهيئة الدراسية</a></li>
+            <li><a href="library.html">المكتبة</a></li>
+            <li><a href="courses.html" id="courses-link" style="display: none;">اختيار مواد</a></li>
+            <li><a href="admin_dashboard.html">قسم الإدارة</a></li>
+            <li><a href="login.html">تسجيل الخروج</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <img src="banar barkat scool.jpg" alt="شعار المدرسة">
+        <h1>الهيئة الدراسية</h1>
+        <p>نقدم لك فريقًا تعليميًا متميزًا.</p>
+    </header>
+
+    <section>
+        <h2>التخصصات الرئيسية</h2>
+        <div class="box-container">
+            <div class="box" onclick="toggleSubBoxes('dept1')">
+                <h3>الصف العاشر</h3>
+            </div>
+            <div class="box" onclick="toggleSubBoxes('dept2')">
+                <h3>الصف  الحادي العاشر</h3>
+            </div>
+            <div class="box" onclick="toggleSubBoxes('dept3')">
+                <h3>الصف  الثاني عشر</h3>
+            </div>
+        </div>
+
+        <!-- Sub Boxes for التخصص الأول -->
+        <div id="dept1" class="hidden">
+            <h2>الصف العاشر</h2>
+            <div class="box-container">
+                <div class="box" onclick="toggleLinkBoxes('subdept1_1')">
+                    <h4>تربيه اسلاميه</h4>
+                </div>
+                <div class="box" onclick="toggleLinkBoxes('subdept1_2')">
+                    <h4>كيمياء</h4>
+                </div>
+                <div class="box" onclick="toggleLinkBoxes('subdept1_3')">
+                    <h4> فيزياء</h4>
+                </div>
+                <div class="box" onclick="toggleLinkBoxes('subdept1_4')">
+                    <h4> احياء</h4>
+                </div>
+                <div class="box" onclick="toggleLinkBoxes('subdept1_5')">
+                    <h4>رياضيات</h4>
+                </div>
+                <div class="box" onclick="toggleLinkBoxes('subdept1_6')">
+                    <h4>لغه العربيه</h4>
+                </div>
+
+                <div class="box" onclick="toggleLinkBoxes('subdept1_7')">
+                    <h4>دراسات اجتماعيه</h4>
+                </div>
+            </div>
+        </div>
+
+        <!-- Link Boxes for المادة 1 -->
+        <div id="subdept1_1" class="hidden">
+            <h2>الصف العاشر تربيه اسلاميه</h2>
+            <div class="box-container">
+                <div class="link-box">
+                    <a href="book scool cals 10/تربيه اسلاميه صف عاشرad.pdf">كتاب</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://exam">ملخصات</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://example.com/link3">اختبارات</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Link Boxes for المادة 2 -->
+        <div id="subdept1_2" class="hidden">
+            <h2>الصف العاشر كيمياء</h2>
+            <div class="box-container">
+                <div class="link-box">
+                    <a href="book scool cals 10/كيماء صف عاشر.pdf">كتاب</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://example.com/link5">ملخصات</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://example.com/link6">اختبارات</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div id="subdept1_3" class="hidden">
+            <h2>الصف العاشر فيزياء</h2>
+            <div class="box-container">
+                <div class="link-box">
+                    <a href="book scool cals 10/فيزياء صف عاشر.pdf">كتاب</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://example.com/link5">ملخصات</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://example.com/link6">اختبارات</a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="subdept1_4" class="hidden">
+            <h2>الصف العاشر احياء</h2>
+            <div class="box-container">
+                <div class="link-box">
+                    <a href="book scool cals 10/">كتاب</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://example.com/link5">ملخصات</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://example.com/link6">اختبارات</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="subdept1_5" class="hidden">
+            <h2>الصف العاشر رياضيات/h2>
+            <div class="box-container">
+                <div class="link-box">
+                    <a href="book scool cals 10/رياضيات صف عاشر.pdf">كتاب</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://example.com/link5">ملخصات</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://example.com/link6">اختبارات</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="subdept1_6" class="hidden">
+            <h2>الصف العاشر لغه عربيه </h2>
+            <div class="box-container">
+                <div class="link-box">
+                    <a href="book scool cals 10/لغه العربيه صف عاشر.pdf">كتاب</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://example.com/link5">ملخصات</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://example.com/link6">اختبارات</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="subdept1_7" class="hidden">
+            <h2>الصف العاشر دراسات</h2>
+            <div class="box-container">
+                <div class="link-box">
+                    <a href="book scool cals 10/دراسات اجتماعيه صف عاشر.pdf">كتاب</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://example.com/link5">ملخصات</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://example.com/link6">اختبارات</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <section>
+           
+    
+            <!-- Sub Boxes for التخصص الأول -->
+            <div id="dept2" class="hidden">
+                <h2>الصف  الحادي العاشر</h2>
+                <div class="box-container">
+                    <div class="box" onclick="toggleLinkBoxes('subdept1_1')">
+                        <h4>تربيه اسلاميه</h4>
+                    </div>
+                    <div class="box" onclick="toggleLinkBoxes('subdept1_2')">
+                        <h4>كيمياء</h4>
+                    </div>
+                    <div class="box" onclick="toggleLinkBoxes('subdept1_3')">
+                        <h4> فيزياء</h4>
+                    </div>
+                    <div class="box" onclick="toggleLinkBoxes('subdept1_4')">
+                        <h4> احياء</h4>
+                    </div>
+                    <div class="box" onclick="toggleLinkBoxes('subdept1_5')">
+                        <h4>رياضيات</h4>
+                    </div>
+                    <div class="box" onclick="toggleLinkBoxes('subdept1_6')">
+                        <h4>لغه العربيه</h4>
+                    </div>
+    
+                    <div class="box" onclick="toggleLinkBoxes('subdept1_7')">
+                        <h4>دراسات اجتماعيه</h4>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Link Boxes for المادة 1 -->
+            <div id="subdept1_1" class="hidden">
+                <h2>الصف  الحادي العاشر</h2>
+                <div class="box-container">
+                    <div class="link-box">
+                        <a href="book  scool cals 11/اسلاميه.pdf">كتاب</a>
+                    </div>
+                    <div class="link-box">
+                        <a href="https://example.com/l">ملخصات</a>
+                    </div>
+                    <div class="link-box">
+                        <a href="https://example.com/link3">اختبارات</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Link Boxes for المادة 2 -->
+            <div id="subdept1_2" class="hidden">
+                <h2>الصف  الحادي العاشر</h2>
+                <div class="box-container">
+                    <div class="link-box">
+                        <a href="book  scool cals 11/الكيمياء.pdf">كتاب</a>
+                    </div>
+                    <div class="link-box">
+                        <a href="https://example.com/link5">ملخصات</a>
+                    </div>
+                    <div class="link-box">
+                        <a href="https://example.com/link6">اختبارات</a>
+                    </div>
+                </div>
+            </div>
+    
+    
+    
+    
+            <div id="subdept1_3" class="hidden">
+                <h2>الصف  الحادي العاشر</h2>
+                <div class="box-container">
+                    <div class="link-box">
+                        <a href="book  scool cals 11/فيزياء.pdf">كتاب</a>
+                    </div>
+                    <div class="link-box">
+                        <a href="https://example.com/link5">ملخصات</a>
+                    </div>
+                    <div class="link-box">
+                        <a href="https://example.com/link6">اختبارات</a>
+                    </div>
+                </div>
+            </div>
+    
+    
+    
+            <div id="subdept1_4" class="hidden">
+                <h2>الصف  الحادي العاشر</h2>
+                <div class="box-container">
+                    <div class="link-box">
+                        <a href="book  scool cals 11/احياء.pdf">كتاب</a>
+                    </div>
+                    <div class="link-box">
+                        <a href="https://example.com/link5">ملخصات</a>
+                    </div>
+                    <div class="link-box">
+                        <a href="https://example.com/link6">اختبارات</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div id="subdept1_5" class="hidden">
+                <h2>الصف  الحادي العاشر</h2>
+                <div class="box-container">
+                    <div class="link-box">
+                        <a href="book  scool cals 11/رياضايات متقدمه.pdf">كتاب</a>
+                    </div>
+                    <div class="link-box">
+                        <a href="https://example.com/link5">ملخصات</a>
+                    </div>
+                    <div class="link-box">
+                        <a href="https://example.com/link6">اختبارات</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div id="subdept1_6" class="hidden">
+                <h2>الصف  الحادي العاشر</h2>
+                <div class="box-container">
+                    <div class="link-box">
+                        <a href="book  scool cals 11/لغه العربيه مؤنس.pdf">كتاب</a>
+                    </div>
+                    <div class="link-box">
+                        <a href="https://example.com/link5">ملخصات</a>
+                    </div>
+                    <div class="link-box">
+                        <a href="https://example.com/link6">اختبارات</a>
+                    </div>
+                </div>
+            </div>
+    
+       
+
+        <!-- يمكنك تكرار الأقسام الفرعية للمواد الأخرى بنفس الطريقة -->
+
+        
+    </section>
+
+
+
+
+
+    <section>
+           
+    
+        <!-- Sub Boxes for التخصص الأول -->
+        <div id="dept3" class="hidden">
+            <h2>الصف  الثاني عشر</h2>
+            <div class="box-container">
+                <div class="box" onclick="toggleLinkBoxes('subdept1_1')">
+                    <h4>تربيه اسلاميه</h4>
+                </div>
+                <div class="box" onclick="toggleLinkBoxes('subdept1_2')">
+                    <h4>كيمياء</h4>
+                </div>
+                <div class="box" onclick="toggleLinkBoxes('subdept1_3')">
+                    <h4> فيزياء</h4>
+                </div>
+                <div class="box" onclick="toggleLinkBoxes('subdept1_4')">
+                    <h4> احياء</h4>
+                </div>
+                <div class="box" onclick="toggleLinkBoxes('subdept1_5')">
+                    <h4>رياضيات</h4>
+                </div>
+                <div class="box" onclick="toggleLinkBoxes('subdept1_6')">
+                    <h4>لغه العربيه</h4>
+                </div>
+
+                <div class="box" onclick="toggleLinkBoxes('subdept1_7')">
+                    <h4>دراسات اجتماعيه</h4>
+                </div>
+            </div>
+        </div>
+
+        <!-- Link Boxes for المادة 1 -->
+        <div id="subdept1_1" class="hidden">
+            <h2>الصف  الثاني عشر</h2>
+            <div class="box-container">
+                <div class="link-box">
+                    <a href="book scool clas 12/cls12_islamiya_p1.pdf">كتاب</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://example.com/link2">ملخصات</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://example.com/link3">اختبارات</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Link Boxes for المادة 2 -->
+        <div id="subdept1_2" class="hidden">
+            <h2>الصف  الثاني عشر</h2>
+            <div class="box-container">
+                <div class="link-box">
+                    <a href="book scool clas 12/cls12_Chem_P1.pdf">كتاب</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://example.com/link5">ملخصات</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://example.com/link6">اختبارات</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div id="subdept1_3" class="hidden">
+            <h2>الصف الثاني عشر</h2>
+            <div class="box-container">
+                <div class="link-box">
+                    <a href="book scool clas 12/cls12_Phys_P1.pdf">كتاب</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://example.com/link5">ملخصات</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://example.com/link6">اختبارات</a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="subdept1_4" class="hidden">
+            <h2>الصف الثاني عشر</h2>
+            <div class="box-container">
+                <div class="link-box">
+                    <a href="book scool clas 12/احياء.pdf">كتاب</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://example.com/link5">ملخصات</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://example.com/link6">اختبارات</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="subdept1_5" class="hidden">
+            <h2>الصف الثاني عشر</h2>
+            <div class="box-container">
+                <div class="link-box">
+                    <a href="book scool clas 12/cls12_MathBasicStd_P1.pdf">كتاب</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://example.com/link5">ملخصات</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://example.com/link6">اختبارات</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="subdept1_6" class="hidden">
+            <h2>الصف الثاني عشر</h2>
+            <div class="box-container">
+                <div class="link-box">
+                    <a href="book scool clas 12/cls12_Muunis_P1.pdf">كتاب</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://example.com/link5">ملخصات</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://example.com/link6">اختبارات</a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="subdept1_7" class="hidden">
+            <h2>الصف الثاني عشر</h2>
+            <div class="box-container">
+                <div class="link-box">
+                    <a href="book scool clas 12/">كتاب</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://example.com/link5">ملخصات</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://example.com/link6">اختبارات</a>
+                </div>
+            </div>
+        </div>
+
+
+   
+
+    <!-- يمكنك تكرار الأقسام الفرعية للمواد الأخرى بنفس الطريقة -->
+
+    
+</section>
+
+<footer>
+    <p>&copy; 2024 مدرسة إمام بركات. جميع الحقوق محفوظة.</p>
+</footer>
+
+    
+
+
+
+
+
+
+    <script src="scripts.js"></script>
+</body>
+</html>

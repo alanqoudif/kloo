@@ -1,0 +1,107 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  /* العنوان الرئيسي */
+  header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center; /* يتم عرض العنوان الرئيسي في وسط الصفحة */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2.5em;
+  }
+  
+  /* تنسيق الشريط الجانبي */
+  .container {
+    display: flex;
+    flex-grow: 1;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    height: 100%;
+    text-align: right;
+  }
+  
+  .sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar nav ul li {
+    margin-bottom: 10px;
+  }
+  
+  .sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    background-color: #444;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .sidebar nav ul li a:hover {
+    background-color: #4CAF50;
+  }
+  
+  /* المحتوى الرئيسي */
+  .main-content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-right: 270px; /* إزاحة المحتوى لتجنب الشريط الجانبي */
+  }
+  
+  /* العنوان الفرعي */
+  .sub-header {
+    text-align: right; /* العنوان الفرعي على الجانب الأيمن */
+    margin-bottom: 20px;
+  }
+  
+  .sub-header h2 {
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+  }
+  
+  /* تنسيق لوحة التحكم */
+  .dashboard-cards {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 30%;
+  }
+  
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  
+
+

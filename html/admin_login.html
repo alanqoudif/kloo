@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - قسم الإدارة</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="logo"><a href="home.html"><img src="images/logo.png" alt="شعار المدرسة"></a></li>
+            <li><a href="admin_login.html">تسجيل الدخول</a></li>
+            <!-- روابط أخرى -->
+        </ul>
+    </nav>
+
+    <header>
+        <img src="images/logo.png" alt="شعار المدرسة">
+        <h1>تسجيل الدخول - قسم الإدارة</h1>
+        <p>يرجى إدخال بيانات الاعتماد الخاصة بك.</p>
+    </header>
+
+    <section>
+        <form id="loginForm">
+            <label for="username">اسم المستخدم:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">كلمة المرور:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">تسجيل الدخول</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 مدرسة إمام بركات. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="firebase-config.js/firebase-config.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

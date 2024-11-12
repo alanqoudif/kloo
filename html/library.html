@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>المكتبة الإلكترونية - مدرسة إمام بركات</title>
+        <link rel="stylesheet" href="styles.css">
+        <!-- Firebase SDK -->
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js"></script>
+        <script src="js/firebase-config.js" defer></script>
+        <script src="library.js" defer></script>
+    </head>
+<body>
+    <nav>
+        <ul>
+            <li class="logo"><a href="index.html"><img src="banar barkat scool.jpg" alt="شعار المدرسة"> </a></li>
+            <li><a href="index.html">الصفحة الرئيسية</a></li>
+            <li><a href="schedule.html">الجداول المدرسية</a></li>
+            <li><a href="staff.html">الهيئة الدراسية</a></li>
+            <li><a href="library.html">المكتبة</a></li>
+            <li><a href="courses.html" id="courses-link" style="display: none;">اختيار مواد</a></li>
+            <li><a href="admin_dashboard.html">قسم الإدارة</a></li>
+            <li><a href="login.html">تسجيل الخروج</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <img src="banar barkat scool.jpg" alt="شعار المدرسة">
+        <h1>المكتبة</h1>
+        <p>استكشف مجموعتنا الواسعة من الكتب التعليمية والترفيهية.</p>
+    </header>
+    <header>
+        <h1>المكتبة</h1>
+    </header>
+    <main id="library-content">
+        <!-- هنا سيتم عرض قائمة الكتب المتاحة للشراء أو التأجير -->
+    </main>
+    <script src="library.js"></script>
+
+</body>
+</html>

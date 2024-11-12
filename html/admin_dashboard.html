@@ -1,0 +1,284 @@
+<!-- admin_dashboard.html -->
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قسم الإدارة - مدرسة إمام بركات</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
+    <script src="firebase-config.js/firebase-config.js" defer></script>
+    <script src="admin.js" defer></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <nav>
+                <ul>
+                    <li class="logo"><a href="index.html"><img src="banar barkat scool.jpg" alt="شعار المدرسة"> </a></li>
+                    <li><a href="index.html">الصفحة الرئيسية</a></li>
+                    <li><a href="schedule.html">الجداول المدرسية</a></li>
+                    <li><a href="staff.html">الهيئة الدراسية</a></li>
+                    <li><a href="library.html">المكتبة</a></li>
+                    <li><a href="courses.html" id="courses-link" style="display: none;">اختيار مواد</a></li>
+                    <li><a href="admin_dashboard.html">قسم الإدارة</a></li>
+                    <li><a href="login.html">تسجيل الخروج</a></li>
+                </ul>
+            </nav> 
+
+            <!-- روابط أخرى حس
+        ب الحاجة -->
+        </ul>
+    </nav>
+
+    <header>
+        <img src="images/logo.png" alt="شعار المدرسة">
+        <h1>قسم الإدارة</h1>
+        <p>إدارة جميع احتياجات المدرسة من هنا.</p>
+    </header>
+
+    <section>
+        <div class="admin-section">
+            <button onclick="showSection('addBook')">إضافة كتاب</button>
+            <button onclick="showSection('manageBooks')">إدارة الكتب</button>
+            <button onclick="showSection('manageStudents')">إدارة الطلاب</button>
+            <button onclick="showSection('recordAbsence')">تسجيل الغياب</button>
+            <button onclick="showSection('manageNews')">إدارة الأخبار</button>
+            <button onclick="showSection('manageSchedules')">إدارة الجداول</button>
+            <button onclick="showSection('managePermissions')">منح الصلاحيات</button>
+            <button onclick="showSection('changePasswords')">تغيير كلمات المرور</button>
+        </div>
+
+        <!-- قسم إضافة كتاب -->
+        <div id="addBook" class="hidden admin-content">
+            <h2>إضافة كتاب جديد</h2>
+            <form id="addBookForm">
+                <label for="bookTitle">عنوان الكتاب:</label>
+                <input type="text" id="bookTitle" name="bookTitle" required>
+                
+                <label for="bookAuthor">المؤلف:</label>
+                <input type="text" id="bookAuthor" name="bookAuthor" required>
+                
+                <label for="bookCategory">الفئة:</label>
+                <input type="text" id="bookCategory" name="bookCategory" required>
+                
+                <label for="bookPrice">السعر (جنيه):</label>
+                <input type="number" id="bookPrice" name="bookPrice" step="0.01" required>
+                
+                <button type="submit">إضافة كتاب</button>
+            </form>
+        </div>
+
+        <!-- قسم إدارة الكتب -->
+        <div id="manageBooks" class="hidden admin-content">
+            <h2>إدارة الكتب</h2>
+            <table id="booksTable">
+                <thead>
+                    <tr>
+                        <th>عنوان الكتاب</th>
+                        <th>المؤلف</th>
+                        <th>الفئة</th>
+                        <th>السعر</th>
+                        <th>الإجراءات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- سيتم تحميل بيانات الكتب هنا -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- قسم إدارة الطلاب -->
+        <div id="manageStudents" class="hidden admin-content">
+            <h2>إدارة الطلاب</h2>
+            
+            <!-- نموذج إضافة طالب جديد -->
+            <form id="addStudentForm">
+                <label for="studentNumber">رقم الطالب:</label>
+                <input type="text" id="studentNumber" name="studentNumber" required>
+                
+                <label for="studentName">اسم الطالب:</label>
+                <input type="text" id="studentName" name="studentName" required>
+                
+                <label for="studentClass">الصف:</label>
+                <input type="text" id="studentClass" name="studentClass" required>
+                
+                <label for="studentCourses">المواد المختارة (مفصولة بفواصل):</label>
+                <input type="text" id="studentCourses" name="studentCourses" required>
+                
+                <label for="studentEmail">البريد الإلكتروني:</label>
+                <input type="email" id="studentEmail" name="studentEmail" required>
+                
+                <button type="submit">إضافة الطالب</button>
+            </form>
+            
+            <!-- جدول عرض الطلاب -->
+            <h3>قائمة الطلاب:</h3>
+            <table id="studentsTable">
+                <thead>
+                    <tr>
+                        <th>رقم الطالب</th>
+                        <th>اسم الطالب</th>
+                        <th>الصف</th>
+                        <th>المواد المختارة</th>
+                        <th>عدد الغيابات</th>
+                        <th>إجراءات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- بيانات الطلاب ستضاف هنا ديناميكيًا -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- قسم تسجيل الغياب -->
+        <!-- قسم تسجيل الغياب -->
+<div id="recordAbsence" class="hidden admin-content">
+    <h2>تسجيل الغياب</h2>
+    <form id="attendanceForm">
+        <label for="studentId">اختيار الطالب:</label>
+        <select id="studentId" name="studentId" required>
+            <!-- سيتم تحميل قائمة الطلاب ديناميكيًا -->
+        </select>
+        
+        <label for="absenceDate">تاريخ الغياب:</label>
+        <input type="date" id="absenceDate" name="absenceDate" required>
+        
+        <label for="absenceReason">سبب الغياب (اختياري):</label>
+        <input type="text" id="absenceReason" name="absenceReason">
+        
+        <button type="submit">تسجيل الغياب</button>
+    </form>
+    
+    <h3>الغيابات المسجلة:</h3>
+    <ul id="absencesList"></ul>
+</div>
+
+        <!-- قسم إدارة الأخبار -->
+        <div id="manageNews" class="hidden admin-content">
+            <h2>إدارة الأخبار</h2>
+            
+            <!-- نموذج إضافة خبر جديد -->
+            <form id="addNewsForm">
+                <label for="newsTitle">عنوان الخبر:</label>
+                <input type="text" id="newsTitle" name="newsTitle" required>
+                
+                <label for="newsContent">محتوى الخبر:</label>
+                <textarea id="newsContent" name="newsContent" required></textarea>
+                
+                <button type="submit">إضافة خبر</button>
+            </form>
+            
+            <!-- جدول عرض الأخبار -->
+            <h3>قائمة الأخبار:</h3>
+            <table id="newsTable">
+                <thead>
+                    <tr>
+                        <th>عنوان الخبر</th>
+                        <th>المحتوى</th>
+                        <th>تاريخ النشر</th>
+                        <th>الإجراءات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- بيانات الأخبار ستضاف هنا ديناميكيًا -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- قسم إدارة الجداول الدراسية -->
+        <div id="manageSchedules" class="hidden admin-content">
+            <h2>إدارة الجداول الدراسية</h2>
+            
+            <!-- نموذج إضافة جدول جديد -->
+            <form id="addScheduleForm">
+                <label for="scheduleName">اسم الجدول:</label>
+                <input type="text" id="scheduleName" name="scheduleName" required>
+                
+                <label for="scheduleContent">محتوى الجدول:</label>
+                <textarea id="scheduleContent" name="scheduleContent" required></textarea>
+                
+                <button type="submit">إضافة جدول</button>
+            </form>
+            
+            <!-- جدول عرض الجداول الدراسية -->
+            <h3>قائمة الجداول الدراسية:</h3>
+            <table id="schedulesTable">
+                <thead>
+                    <tr>
+                        <th>اسم الجدول</th>
+                        <th>المحتوى</th>
+                        <th>تاريخ الإنشاء</th>
+                        <th>الإجراءات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- بيانات الجداول ستضاف هنا ديناميكيًا -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- قسم منح الصلاحيات للمعلمين -->
+        <div id="managePermissions" class="hidden admin-content">
+            <h2>منح الصلاحيات للمعلمين</h2>
+            <form id="permissionsForm">
+                <label for="teacherUsername">اسم مستخدم المعلم:</label>
+                <input type="text" id="teacherUsername" name="teacherUsername" required>
+                
+                <label for="permission">الصلاحية:</label>
+                <select id="permission" name="permission" required>
+                    <option value="view">عرض</option>
+                    <option value="edit">تعديل</option>
+                    <option value="admin">إدارة</option>
+                </select>
+                
+                <button type="submit">منح الصلاحية</button>
+            </form>
+            
+            <h3>قائمة الصلاحيات:</h3>
+            <table id="permissionsTable">
+                <thead>
+                    <tr>
+                        <th>اسم المعلم</th>
+                        <th>الصلاحية</th>
+                        <th>الإجراءات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- بيانات الصلاحيات ستضاف هنا ديناميكيًا -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- قسم تغيير كلمات مرور الطلاب -->
+        <div id="changePasswords" class="hidden admin-content">
+            <h2>تغيير كلمة مرور الطالب</h2>
+            <form id="changePasswordForm">
+                <label for="changeStudentId">اختيار الطالب:</label>
+                <select id="changeStudentId" name="changeStudentId" required>
+                    <!-- سيتم تحميل قائمة الطلاب ديناميكيًا -->
+                </select>
+                
+                <label for="newPassword">كلمة المرور الجديدة:</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+                
+                <button type="submit">تغيير كلمة المرور</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 مدرسة إمام بركات. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <head>
+        <!-- ... -->
+        <script src="firebase-config.js/firebase-config.js" defer></script>
+        <script src="admin.js" defer></script>
+    </head>
+    
+</body>
+</html>

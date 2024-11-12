@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختيار مواد - مدرسة إمام بركات</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="logo"><a href="index.html"><img src="banar barkat scool.jpg" alt="شعار المدرسة"> </a></li>
+            <li><a href="index.html">الصفحة الرئيسية</a></li>
+            <li><a href="schedule.html">الجداول المدرسية</a></li>
+            <li><a href="staff.html">الهيئة الدراسية</a></li>
+            <li><a href="library.html">المكتبة</a></li>
+            <li><a href="courses.html" >اختيار مواد</a></li>
+            <li><a href="admin_dashboard.html">قسم الإدارة</a></li>
+            <li><a href="login.html">تسجيل الخروج</a></li>
+        </ul>
+    </nav>
+    <form id="subject-form" action="submit_selection.php" method="post">
+        <!-- حقل اسم الطالب -->
+        <label for="student-name">اسم الطالب:</label>
+        <input type="text" id="student-name" name="student_name" placeholder="ادخل اسم الطالب" required>
+
+        <!-- حقل الصف -->
+        <label for="class-grade">الصف:</label>
+        <input type="text" id="class-grade" name="class_grade" placeholder="ادخل الصف" required>
+
+        <!-- قائمة المواد -->
+        <label>اختر المواد:</label>
+        <ul class="subject-list">
+             
+            <li><input type="checkbox" name="subjects[]" value="رياضيات"> رياضيات</li>
+
+            <li><input type="checkbox" name="subjects[]" value="علوم"> علوم</li>
+
+            <li><input type="checkbox" name="subjects[]" value="عربي"> عربي</li>
+
+            <li><input type="checkbox" name="subjects[]" value="تاريخ"> تاريخ</li>
+            
+            <li><input type="checkbox" name="subjects[]" value="فيزياء"> فيزياء</li>
+        </ul>
+
+        <!-- زر الإرسال -->
+        <button type="submit">اختيار</button>
+    </form>
+</body>
+</html>
